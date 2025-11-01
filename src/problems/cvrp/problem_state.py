@@ -11,7 +11,7 @@ def get_instance_problem_state(instance_data: dict) -> dict:
 
     Returns:
         dict: The dictionary contains the instance problem state with:
-            - average_demand (float): The average demand per node.
+            - average_demand (float): The average demand per node
             - demand_variance (float): The variance in demand across all nodes.
             - average_distance (float): The average distance between nodes.
             - max_distance (float): The maximum distance between any two nodes.
