@@ -8,8 +8,11 @@ import base64
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
-from streamlit_theme import st_theme
-from streamlit import session_state as state
+import os
+import sys
+
+# 添加项目路径到系统路径
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 generated_heuristics = queue.Queue()
 
@@ -19,13 +22,13 @@ def load_text(file_path: str) -> str:
 def sidebar():
     if "scenario" not in state:
         state.scenario = None
-    theme = st_theme()
-    if theme:
-        theme = theme.get("base", "light")
+    # theme = st_theme()
+    # if theme:
+    #     theme = theme.get("base", "light")
     css = f"""
 <style>
     a[href="#_heuristic_generation_agent"], a[href="#_heuristic_evolution_agent"], a[href="#_heuristic_generation_agent"], a[href="#_heuristic_evolution_agent"],{{
-        color: {"black" if theme == "light" else "white"};
+        color: black;
     }}
 </style>
 """
